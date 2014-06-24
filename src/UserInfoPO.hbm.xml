@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 映射文件的DTD -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 根元素 -->
+<hibernate-mapping >
+	<!-- class元素用来配置PO对象与数据库表的对应关系 -->
+    <class name="UserInfoPO" table="info">
+        <!-- type用于表示PO对象的属性类型 -->
+        <id name="id" type="int">
+        	<column name="id"/>
+            <generator class="increment"/>
+        </id>
+        <!-- property元素用于配置PO对象的某个属性对应的表中的某个字段名 -->
+        <property name="userName" type="string">
+        	<column name="userName" length="30" not-null="true"/>
+        </property>
+        <property name="password" type="string">
+        	<column name="password" length="30" not-null="true"/>
+        </property>
+    </class>
+
+</hibernate-mapping>
